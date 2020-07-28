@@ -8,6 +8,42 @@
     position: relative;
 }
 
+/* AVATAR */
+.avatar {
+    line-height: 90px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.avatar img{
+    height: 60px;
+    width: 60px;
+    border-radius:50%;
+}
+
+/* ICONS */
+.icons {
+    line-height: 75px;
+    margin-top: 15px;
+    vertical-align: middle;
+    float: right;
+}
+.icons i {
+    font-size: 30px;
+    margin-left: 5px;
+    color: #b1b1b1;
+    padding: 10px;
+}
+
+/* CONTACT */
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 90px;
+
+}
 
 /* SFONDO */
 .greenstripe {
@@ -39,18 +75,22 @@
 header {
     width: 100%;
     height: 90px;
-    background-color: tomato;
+    background-color: #eaeaea;
 }
 .mypart{
     width: 30%;
     height: 100%;
     border-right: 1px solid black;
     float: left;
+    display: flex;
+    justify-content: space-between;
 }
 .contact-part {
     width: 70%;
     height: 100%;
     float: left;
+    display: flex;
+    justify-content: space-between;
 }
 /*  LEFT ASIDE */
 aside {
