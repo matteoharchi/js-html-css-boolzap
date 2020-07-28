@@ -99,20 +99,99 @@ aside {
     width: 30%;
     background-color: green;
 }
-.banner {
+/* RICEVI NOTIFICHE */
+.notifiche {
     height: 90px;
     width: 100%;
-    background-color: pink;
+    background-color: #8edafc;
+    display: flex;
+    align-items: center;
 }
+.bell {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: white;
+    color: #8edafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+.bell i {
+    font-size: 25px;
+
+}
+
+.notifiche-text{
+    height: 60px;
+}
+.notifiche-text p {
+    font-size: 12px;
+    text-decoration: underline;
+    color: #497d91;
+}
+
+/* SEARCHBAR */
 .search {
     height: 60px;
     width: 100%;
-    background-color: violet;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
 }
+.searchbar{
+    display: flex;
+    width: 96%;
+    margin-left: 2%;
+}
+.searchbar .lens {
+    height: 40px;
+    background-color: white;
+    width: 50px;
+    border: 1px solid grey;
+    border-right: none;
+    line-height: 40px;
+    vertical-align: middle;
+    padding-left: 10px;
+    font-size: 20px;
+    color: #b7b8bc;
+}
+.searchbar input {
+    height: 40px;
+    border: 1px solid grey;
+    border-left: none;
+    width: 480px;
+}
+/* LISTA CHAT */
 .conversations {
     height: calc(100% - 150px);
     width: 100%;
-    background-color: cyan;
+    overflow: scroll;
+}
+.conversation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+}
+.conversation .avatar {
+    margin-right: 20px;
+}
+
+.message-time {
+    width: calc(100% - 300px;);
+    height: 90px;
+    margin-left: 120px;
+    margin-top: 10px;
+    color: lightgrey;
+    font-weight: 600;
+}
+#last-message {
+    color: lightgrey;
 }
 
 /* RIGHT PART */
@@ -127,12 +206,37 @@ main {
     width: 100%;
 }
 .chat {
-    height: calc(100% - 100px);
+    height: calc(100% - 70px);
     width: 100%;
-    background-color: brown;
+    background-image: url("https://images.wired.it/wp-content/uploads/2018/03/15134044/1521114043_Alvar-Carto-cover-1050x590.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .type-box {
-    height : 100px;
+    height : 70px;
     width: 100%;
     background-color: grey;
+    line-height: 70px;
+    vertical-align: middle;
+    font-size: 30px;
+}
+.type-box-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#emoji {
+    margin-left: 30px;
+}
+
+#type-bar input{
+    line-height: 50px;
+    width: 900px;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+#mic {
+    margin-right: 30px;
 }
