@@ -9,30 +9,27 @@ function invio(){
         // prendo il contenuto di ciò che scrivo
         var messageContent = $("#message-bar").val();
         // // clono  template my message
-        var myMessage = $(".my.message").clone();
-        var myMessageHour = $(".my.message .hour").clone();
-        var myMessageContent = $(".my.message .content").clone();
+        var myMessage = $(".template .my.message").clone();
+        var myMessageHour = myMessage.children(".hour");
+        var myMessageContent = myMessage.children(".content");
         // // //copio il contenuto nel nuovo messaggio
         $(myMessageContent).text(messageContent);
-        $(myMessage).append(myMessageContent);
         $(myMessageHour).text(hour + ":" + minutes);
-        $(myMessage).append(myMessageHour);
         // // //aggiungo nuovo messaggio a chat
         $(".chat").append(myMessage);
-        // rendo visibile il messaggio
-        $(myMessage).removeClass("template");
+
+
+
 
         //messaggio del contatto
         setTimeout(function () {
-            var yourMessage = $(".your.message").clone();
-            var yourMessageHour = $(".your.message .hour").clone();
-            var yourMessageContent = $(".your.message .content").clone();
+            var yourMessage = $(".template .your.message").clone();
+            var yourMessageHour = yourMessage.children(".hour");
+            var yourMessageContent = yourMessage.children(".content");
             $(yourMessageContent).text("ok");
-            $(yourMessage).append(yourMessageContent);
             $(yourMessageHour).text(hour + ":" + minutes)
-            $(yourMessage).append(yourMessageHour);
             $(".chat").append(yourMessage);
-            $(yourMessage).removeClass("template");
+
         }, 1000);
     }
 }
