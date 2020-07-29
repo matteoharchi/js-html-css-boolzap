@@ -169,7 +169,8 @@ aside {
 .conversations {
     height: calc(100% - 150px);
     width: calc(100%);
-    overflow: scroll;
+    overflow-y: scroll;
+
 }
 .conversation {
     display: flex;
@@ -213,7 +214,7 @@ main {
     background-image: url("https://static.vecteezy.com/system/resources/previews/000/694/451/non_2x/pastel-watercolour-background-vector.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .message-box {
     width: 100%;
