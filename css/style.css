@@ -92,6 +92,12 @@ header {
     display: flex;
     justify-content: space-between;
 }
+.contact-info {
+    display: none;
+}
+.active{
+    display: flex;
+}
 /*  LEFT ASIDE */
 aside {
     float: left;
