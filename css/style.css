@@ -80,7 +80,7 @@ header {
 .mypart{
     width: 30%;
     height: 100%;
-    border-right: 1px solid black;
+    border-right: 1px solid lightgrey;
     float: left;
     display: flex;
     justify-content: space-between;

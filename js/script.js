@@ -29,9 +29,11 @@ function invio(){
             $(yourMessageContent).text("ok");
             $(yourMessageHour).text(hour + ":" + minutes)
             $(".chat").append(yourMessage);
+            $(".chat").scrollTop(999999);
 
         }, 1000);
     }
+
 }
 
 //funzione numero casuale per risposte
