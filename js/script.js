@@ -2,6 +2,8 @@ var risposte = ["Ciao", "Va bene", "Ok", "Grazie"];
 var hour = ora();
 var minutes = minuti();
 
+//CHAT
+
 //funzione invio messaggio
 $("#message-bar").keydown(invio);
 function invio(){
@@ -17,6 +19,8 @@ function invio(){
         $(myMessageHour).text(hour + ":" + minutes);
         // // //aggiungo nuovo messaggio a chat
         $(".chat").append(myMessage);
+        // auto scroll
+        $(".chat").scrollTop(999999);
 
 
 
@@ -46,11 +50,43 @@ function randomIndex(min, max){
 function ora(){
     var d = new Date();
     var n = d.getHours();
+    if (n < 10) {
+        n = "0"+n;
+    }
     return n;
 };
 function minuti(){
     var d = new Date();
     var n = d.getMinutes();
+    if (n < 10) {
+        n = "0"+n;
+    }
     return n;
 };
-console.log(minuti());
+
+//ACTIVE CHAT
+
+$(".conversation").click(function selectContact() {
+    var index = $(this).index();
+    $(".conversation").removeClass("active");
+    $(".conversation").eq(index).addClass("active");
+    $(".contact-info").removeClass("active");
+    $(".contact-info").eq(index).addClass("active");
+
+});
+
+//SEARCHBAR
+$("#searchcontact").keyup(findContact);
+function findContact() {
+    var research = $("#searchcontact").val().toLowerCase();
+    var result = $(".conversation");
+    for (var i = 0; i < result.length; i++){
+        var item = result.eq(i).find(".contact-name").text();
+        if (item.toLowerCase().includes(research)) {
+            result.eq(i).show();
+        } else {
+            result.eq(i).hide();
+        }
+    }
+
+}

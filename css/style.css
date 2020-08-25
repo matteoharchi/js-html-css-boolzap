@@ -233,6 +233,8 @@ main {
     margin-top: 20px;
     padding: 10px;
     min-width: 100px;
+    max-width: 500px;
+    word-wrap: break-word;
 }
 .my.message {
     right: 10px;
