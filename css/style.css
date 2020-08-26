@@ -95,7 +95,7 @@ header {
 .contact-info {
     display: none;
 }
-.active{
+.contact-info.active{
     display: flex;
 }
 /*  LEFT ASIDE */
@@ -223,6 +223,10 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     overflow-y: scroll;
+    display: none;
+}
+.chat.active {
+    display: block;
 }
 .message-box {
     width: 100%;

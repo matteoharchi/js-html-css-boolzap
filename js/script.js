@@ -11,29 +11,29 @@ function invio(){
         // prendo il contenuto di ciò che scrivo
         var messageContent = $("#message-bar").val();
         // // clono  template my message
-        var myMessage = $(".template .my.message").clone();
+        var myMessage = $(".chat.active .template .my.message").clone();
         var myMessageHour = myMessage.children(".hour");
         var myMessageContent = myMessage.children(".content");
         // // //copio il contenuto nel nuovo messaggio
         $(myMessageContent).text(messageContent);
         $(myMessageHour).text(hour + ":" + minutes);
         // // //aggiungo nuovo messaggio a chat
-        $(".chat").append(myMessage);
+        $(".chat.active").append(myMessage);
         // auto scroll
-        $(".chat").scrollTop(999999);
+        $(".chat.active").scrollTop(999999);
 
 
 
 
         //messaggio del contatto
         setTimeout(function () {
-            var yourMessage = $(".template .your.message").clone();
+            var yourMessage = $(".chat.active .template .your.message").clone();
             var yourMessageHour = yourMessage.children(".hour");
             var yourMessageContent = yourMessage.children(".content");
             $(yourMessageContent).text("ok");
             $(yourMessageHour).text(hour + ":" + minutes)
-            $(".chat").append(yourMessage);
-            $(".chat").scrollTop(999999);
+            $(".chat.active").append(yourMessage);
+            $(".chat.active").scrollTop(999999);
 
         }, 1000);
     }
@@ -72,6 +72,8 @@ $(".conversation").click(function selectContact() {
     $(".conversation").eq(index).addClass("active");
     $(".contact-info").removeClass("active");
     $(".contact-info").eq(index).addClass("active");
+    $(".chat").removeClass("active");
+    $(".chat").eq(index).addClass("active");
 
 });
 
