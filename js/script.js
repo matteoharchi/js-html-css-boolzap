@@ -1,6 +1,7 @@
 var risposte = ["Ciao", "Va bene", "Ok", "Grazie"];
 var hour = ora();
 var minutes = minuti();
+console.log(messaggioContatto(risposte));
 
 //CHAT
 
@@ -23,17 +24,17 @@ function invio(){
         $(".chat.active").scrollTop(999999);
 
 
-
-
         //messaggio del contatto
         setTimeout(function () {
             var yourMessage = $(".chat.active .template .your.message").clone();
             var yourMessageHour = yourMessage.children(".hour");
             var yourMessageContent = yourMessage.children(".content");
-            $(yourMessageContent).text("ok");
+            var contactMessage = messaggioContatto(risposte);
+            $(yourMessageContent).text(contactMessage);
             $(yourMessageHour).text(hour + ":" + minutes)
             $(".chat.active").append(yourMessage);
             $(".chat.active").scrollTop(999999);
+            $(".active #last-message").text(contactMessage);
 
         }, 1000);
     }
@@ -91,4 +92,12 @@ function findContact() {
         }
     }
 
+}
+function numeroRandom(max,min){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function messaggioContatto(mess){
+    var mess= ["Ciao", "Va bene", "Ok", "Grazie"];
+    return mess[numeroRandom(0,mess.length)]
 }
